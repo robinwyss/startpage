@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="weather-widget">
+  <template>
+    <core-ajax auto url="http://api.openweathermap.org/data/2.5/weather" params='{"q":"Copenhagen,dk", "units": "metric"}'
+    handleAs="json" id="ajax"
+    on-core-response="{{handleResponse}}"></core-ajax>
+    <h3>{{city}}</h3>
+    <div>{{description}}</div>
+    <div>{{temp}}</div>
+  </template>
+  <script>
+  Polymer({
+    handleResponse: function(event, data){
+      var data = data.response;
+      this.city = data.name;
+      this.description = data.weather[0].description;
+      this.temp = Math.round(data.main.temp);
+    }
+  })
+  </script>
+</polymer-element>

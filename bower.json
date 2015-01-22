@@ -1,0 +1,22 @@
+{
+  "name": "startpage",
+  "version": "0.0.0",
+  "authors": [
+    "Robin Wyss <rowyss@gmail.com>"
+  ],
+  "description": "Personal startpage",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "www.robinwyss.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.2"
+  }
+}
