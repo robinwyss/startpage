@@ -1,0 +1,161 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="weather-icon">
+  <template>
+
+  </template>
+  <script>
+  Polymer({
+  })
+  </script>
+</polymer-element>
+
+<polymer-element name="wi-sun">
+  <template>
+  <style>
+  :host {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+
+  .wi {
+    margin: 5%;
+    position: relative;
+    width: 90%;
+    height: 90%;
+  }
+
+  .wi-sun:before {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    content: " ";
+    background-color: #FFF832;
+    box-shadow: 0px 0px 10px #FFF832;
+  }
+  </style>
+      <div class="wi wi-sun">
+
+      </div>
+  </template>
+  <script>
+  Polymer({
+})
+</script>
+</polymer-element>
+
+<polymer-element name="wi-cloud">
+  <template>
+    <style>
+    :host {
+      width: 100px;
+      height: 100px;
+      display: block;
+    }
+    .wi-cloud {
+      width: 90%;
+      height: 30%;
+      top: 20%;
+      left: 7%;
+      border-radius: 40px;
+      position: relative;
+      z-index: 1;
+      background-color: #FFF;
+    }
+
+    .wi-cloud:before {
+      width: 60%;
+      height: 174%;
+      border-radius: 50%;
+      position: relative;
+      top: -86%;
+      left: 12%;
+      z-index: 1;
+      background-color: #FFF;
+      content: " ";
+      display: block;
+    }
+
+    .wi-cloud:after {
+      width: 31%;
+      height: 83%;
+      border-radius: 25px;
+      position: relative;
+      top: -220%;
+      left: 53%;
+      z-index: 1;
+      background-color: #FFF;
+      content: " ";
+      display: block;
+    }
+
+    .wi-cloud.shadow {
+      top: 49%;
+      left: 6%;
+    }
+    .wi-cloud.shadow,
+    .wi-cloud.shadow:before,
+    .wi-cloud.shadow:after {
+      background-color: #000;
+      box-shadow: 3px 3px 2px #000
+    }
+
+    </style>
+      <div class="wi wi-cloud shadow"></div>
+      <div class="wi wi-cloud"></div>
+  </template>
+  <script>
+  Polymer({
+})
+</script>
+</polymer-element>
+
+<polymer-element name="wi-partly-cloudy">
+  <template>
+  <style>
+      :host {
+        width: 100px;
+        height: 100px;
+        display: block;
+      }
+      wi-cloud {
+        margin-top: -100px;
+      }
+    </style>
+    <wi-sun></wi-sun>
+    <wi-cloud></wi-cloud>
+  </template>
+  <script>
+  Polymer({
+  })
+  </script>
+</polymer-element>
+
+<polymer-element name="wi-heavy-clouds">
+  <template>
+  <style>
+  :host {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+  wi-cloud {
+    margin-top: -30px;
+    margin-left: -5px;
+  }
+  wi-cloud.second {
+    margin-top: -70px;
+    margin-left: 0px;
+  }
+  </style>
+  <wi-cloud></wi-cloud>
+  <wi-cloud class="second"></wi-cloud>
+</template>
+<script>
+Polymer({
+})
+</script>
+</polymer-element>
