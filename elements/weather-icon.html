@@ -5,8 +5,7 @@
 
   </template>
   <script>
-  Polymer({
-  })
+  Polymer({})
   </script>
 </polymer-element>
 
@@ -20,7 +19,8 @@
   }
 
   .wi {
-    margin: 5%;
+    top: 10%;
+    left: 10%;
     position: relative;
     width: 90%;
     height: 90%;
@@ -42,9 +42,8 @@
       </div>
   </template>
   <script>
-  Polymer({
-})
-</script>
+  Polymer({})
+  </script>
 </polymer-element>
 
 <polymer-element name="wi-cloud">
@@ -55,46 +54,39 @@
       height: 100px;
       display: block;
     }
+    .wi-cloud,
+    .wi-cloud:before,
+    .wi-cloud:after {
+      background-color: #FFF;
+      content: " ";
+      display: block;
+      position: relative;
+    }
     .wi-cloud {
       width: 90%;
       height: 30%;
-      top: 20%;
-      left: 7%;
+      left: 3%;
       border-radius: 40px;
-      position: relative;
-      z-index: 1;
-      background-color: #FFF;
     }
-
     .wi-cloud:before {
       width: 60%;
       height: 174%;
       border-radius: 50%;
-      position: relative;
       top: -86%;
       left: 12%;
-      z-index: 1;
-      background-color: #FFF;
-      content: " ";
-      display: block;
-    }
 
+    }
     .wi-cloud:after {
       width: 31%;
       height: 83%;
       border-radius: 25px;
-      position: relative;
       top: -220%;
       left: 53%;
-      z-index: 1;
-      background-color: #FFF;
-      content: " ";
-      display: block;
     }
 
     .wi-cloud.shadow {
-      top: 49%;
-      left: 6%;
+      top: 29%;
+      left: 2%;
     }
     .wi-cloud.shadow,
     .wi-cloud.shadow:before,
@@ -108,9 +100,8 @@
       <div class="wi wi-cloud"></div>
   </template>
   <script>
-  Polymer({
-})
-</script>
+  Polymer({})
+  </script>
 </polymer-element>
 
 <polymer-element name="wi-partly-cloudy">
@@ -122,15 +113,14 @@
         display: block;
       }
       wi-cloud {
-        margin-top: -100px;
+        margin-top: -70px;
       }
     </style>
     <wi-sun></wi-sun>
     <wi-cloud></wi-cloud>
   </template>
   <script>
-  Polymer({
-  })
+  Polymer({})
   </script>
 </polymer-element>
 
@@ -142,20 +132,16 @@
     height: 100px;
     display: block;
   }
-  wi-cloud {
-    margin-top: -30px;
-    margin-left: -5px;
-  }
+
   wi-cloud.second {
-    margin-top: -70px;
-    margin-left: 0px;
+    margin-top: -70%;
+    margin-left: 5%;
   }
   </style>
   <wi-cloud></wi-cloud>
   <wi-cloud class="second"></wi-cloud>
 </template>
 <script>
-Polymer({
-})
+Polymer({})
 </script>
 </polymer-element>
