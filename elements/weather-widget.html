@@ -3,19 +3,46 @@
 
 <polymer-element name="weather-widget">
     <template>
+        <style>
+            :host {
+                width: 240px;
+                height: 170px;
+                display: block;
+            }
+            .condition, .icon {
+                display: inline-block;
+                margin: 5px;
+                vertical-align: top;
+            }
+            .condition h2 {
+                margin: 10px;
+            }
+            .city {
+                margin: 5px;
+            }
+            .sun {
+                text-align: center;
+            }
+        </style>
         <core-ajax auto url="http://api.openweathermap.org/data/2.5/weather"
                    params='{"q":"Copenhagen,dk", "units": "metric"}'
                    handleAs="json" id="ajax"
                    on-core-response="{{handleResponse}}"></core-ajax>
-        <h3>{{city}}</h3>
-
-        <div>{{description}}</div>
-        <div>{{temp}}</div>
-        <div>sunrise: {{sunrise}} - sunset: {{sunset}}</div>
+        <h2 class="city">{{city}} </h2>
         <div>
-            <weather-icon condition="{{icon}}"></weather-icon>
+            <div class="condition">
+
+                <h2>{{temp}}°</h2>
+
+                <div>{{description}}</div>
+                <div>Wind {{wind}} km/h</div>
+            </div>
+            <div class="icon">
+                <weather-icon condition="{{icon}}"></weather-icon>
+            </div>
         </div>
-        <div>Wind {{wind}} km/h</div>
+        <div class="sun">Sunrise: {{sunrise}} - Sunset: {{sunset}}</div>
+
     </template>
     <script>
         Polymer({
