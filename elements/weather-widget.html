@@ -2,22 +2,57 @@
 <link rel="import" href="../bower_components/core-ajax/core-ajax.html">
 
 <polymer-element name="weather-widget">
-  <template>
-    <core-ajax auto url="http://api.openweathermap.org/data/2.5/weather" params='{"q":"Copenhagen,dk", "units": "metric"}'
-    handleAs="json" id="ajax"
-    on-core-response="{{handleResponse}}"></core-ajax>
-    <h3>{{city}}</h3>
-    <div>{{description}}</div>
-    <div>{{temp}}</div>
-  </template>
-  <script>
-  Polymer({
-    handleResponse: function(event, data){
-      var data = data.response;
-      this.city = data.name;
-      this.description = data.weather[0].description;
-      this.temp = Math.round(data.main.temp);
-    }
-  })
-  </script>
+    <template>
+        <core-ajax auto url="http://api.openweathermap.org/data/2.5/weather"
+                   params='{"q":"Copenhagen,dk", "units": "metric"}'
+                   handleAs="json" id="ajax"
+                   on-core-response="{{handleResponse}}"></core-ajax>
+        <h3>{{city}}</h3>
+
+        <div>{{description}}</div>
+        <div>{{temp}}</div>
+        <div>sunrise: {{sunrise}} - sunset: {{sunset}}</div>
+        <div>
+            <weather-icon condition="{{icon}}"></weather-icon>
+        </div>
+        <div>Wind {{wind}} km/h</div>
+    </template>
+    <script>
+        Polymer({
+            handleResponse: function (event, data) {
+                var data = data.response;
+                this.city = data.name;
+                this.wind = msToKmh(data.wind.speed);
+                this.sunrise = getTime(data.sys.sunrise, data.dt);
+                this.sunset = getTime(data.sys.sunset, data.dt);
+                this.description = data.weather[0].description;
+                this.icon = getIcon(data.weather[0].icon);
+                this.temp = Math.round(data.main.temp);
+
+                function getIcon(name) {
+                    var map = {
+                        '01': 'Sunny',
+                        '02': 'partly-cloudy',
+                        '03': 'cloudy',
+                        '04': 'heavy-clouds',
+                        '09': 'rain',
+                        '10': 'rain',
+                        '11': 'storm',
+                        '13': 'snow',
+                        '50': 'mist'
+                    };
+                    return map[name.substr(0, 2)];
+                }
+
+                function getTime(millis, dt) {
+                    var date = new Date(millis * 1000)
+                    return date.getHours() + ':' + date.getMinutes();
+                }
+
+                function msToKmh(ms) {
+                    return Math.round(ms * 3.6 * 10) / 10;
+                }
+            }
+        })
+    </script>
 </polymer-element>
