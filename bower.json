@@ -1,23 +1,24 @@
 {
-  "name": "startpage",
-  "version": "0.0.0",
-  "authors": [
-    "Robin Wyss <rowyss@gmail.com>"
-  ],
-  "description": "Personal startpage",
-  "main": "app.js",
-  "license": "MIT",
-  "homepage": "www.robinwyss.com",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "polymer": "Polymer/polymer#~0.5.2",
-    "core-ajax": "Polymer/core-ajax#~0.5.3"
-  }
+    "name": "startpage",
+    "version": "0.0.0",
+    "authors": [
+        "Robin Wyss <rowyss@gmail.com>"
+    ],
+    "description": "Personal startpage",
+    "main": "app.js",
+    "license": "MIT",
+    "homepage": "www.robinwyss.com",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#~0.5.2",
+        "core-ajax": "Polymer/core-ajax#~0.5.3",
+        "core-elements": "Polymer/core-elements#~0.5.4"
+    }
 }
