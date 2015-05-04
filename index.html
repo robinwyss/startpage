@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <!-- 1. Load platform support before any code that touches the DOM. -->
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-    <!-- 2. Load the component using an HTML Import -->
-    <link rel="import" href="elements/weather-widget.html">
-    <link rel="import" href="elements/weather-icons.html">
-    <link rel="import" href="elements/weather-icon.html">
-</head>
-
-<body>
-    <!-- 3. Declare the element by its tag. -->
-    <weather-widget></weather-widget>
-</body>
-
+    
+    <head>
+        <!-- 1. Load platform support before any code that touches the DOM. -->
+        <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+        <!-- 2. Load the component using an HTML Import -->
+        <link rel="import" href="bower_components/core-toolbar/core-header.html" />
+        <link rel="import" href="bower_components/core-toolbar/core-toolbar.html" />
+        <link rel="import" href="elements/weather-widget.html">
+        <link rel="import" href="elements/weather-icons.html">
+        <link rel="import" href="elements/weather-icon.html">
+        <style type="text/css">
+            body {
+                margin: 0;
+                background-color: #eeeeef;
+            }
+            .content core-header-panel {
+                float: left;
+                width: 360px;
+                height: 400px;
+                margin: 5px;
+                background-color: white;
+                margin: 1px solid #555555;
+            }
+            core-toolbar {
+                 background-color: #7986cb;
+                 color: white;
+            }
+        </style>
+    </head>
+    
+    <body fullbleed layout vertical>
+        <core-header-panel flex>
+            <core-toolbar class="medium-tall">
+                <div></div>
+            </core-toolbar>
+            <!-- <weather-widget></weather-widget>-->
+            <div class="content">
+                <core-header-panel mode="seamed">
+                    <core-toolbar>
+                        <div>Hello World!</div>
+                    </core-toolbar>
+                </core-header-panel>
+                <core-header-panel mode="seamed">
+                    <core-toolbar>
+                        <div>Weather</div>
+                    </core-toolbar>
+                    <weather-widget></weather-widget>
+                </core-header-panel>
+            </div>
+        </core-header-panel>
+    </body>
 </html>
