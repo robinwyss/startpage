@@ -7,9 +7,10 @@
     <template>
         <style>
             :host {
-                width: 360px;
-                height: 200px;
+                width: 350px;
+                height: 120px;
                 display: block;
+                font-size: 12px; 
             }
             .condition{
                 float: left;
@@ -50,6 +51,7 @@
                         <span class="city">{{city}}</span>
                         <div>{{description}}</div>
                         <div>Wind {{wind}} km/h</div>
+                        <div class="sun">Sunrise: {{sunrise}} - Sunset: {{sunset}}</div>
                     </div>
                     <div class="icon">
                         <weather-icon condition="{{icon}}"></weather-icon>
@@ -58,7 +60,7 @@
                         <span>{{temp}}°</span>
                     </div>
                 </div>
-                <div class="sun">Sunrise: {{sunrise}} - Sunset: {{sunset}}</div>
+                
             </div>
         </div>
     </template>

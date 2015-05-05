@@ -1,0 +1,46 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<script src="http://widget.time.is/de.js"></script>
+<polymer-element name="date-time">
+	<template>
+		<style>
+			:host {
+			    width: 360px;
+			    height: 100px;
+			    display: block;
+				
+			}
+			.time {
+				font-size: 2em;
+			}
+		</style>
+			<div class="date-time">
+				<div class="time">{{time}}</span>
+				<div class="date">{{date}} - week {{week}}</div>
+			</div>
+	</template>
+	<script>
+		function getWeekNum(){
+		    var d = new Date();
+		    d.setHours(0,0,0);
+		    d.setDate(d.getDate()+4-(d.getDay()||7));
+		    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+		}
+		function getTime() {
+			return new Date().toLocaleTimeString();
+		}
+		function getDate() {
+			return new Date().toLocaleDateString();
+		}
+        Polymer({
+			ready: function(){
+				this.updateDateTime();
+			},
+			updateDateTime: function() {
+				this.time = getTime();
+				this.date = getDate();
+				this.week = getWeekNum();
+				this.async(this.updateDateTime, null, 500);
+			}
+		})
+	</script>
+</polymer-element>

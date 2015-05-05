@@ -5,15 +5,17 @@
         <!-- 1. Load platform support before any code that touches the DOM. -->
         <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
         <!-- 2. Load the component using an HTML Import -->
-        <link rel="import" href="bower_components/core-toolbar/core-header.html" />
+        <link rel="import" href="bower_components/core-header-panel/core-header-panel.html" />
         <link rel="import" href="bower_components/core-toolbar/core-toolbar.html" />
         <link rel="import" href="elements/weather-widget.html">
         <link rel="import" href="elements/weather-icons.html">
         <link rel="import" href="elements/weather-icon.html">
+        <link rel="import" href="elements/date-time.html">
         <style type="text/css">
             body {
                 margin: 0;
                 background-color: #eeeeef;
+                font-family: 'Open Sans', Arial, sans-serif;
             }
             .content core-header-panel {
                 float: left;
@@ -32,15 +34,21 @@
     
     <body fullbleed layout vertical>
         <core-header-panel flex>
-            <core-toolbar class="medium-tall">
-                <div></div>
+            <core-toolbar class="tall">
+            <div flex class="middle">
+                <date-time></datie-time>
+            </div>
+                <div class="weather middle">
+                    <weather-widget></weather-widget>
+                </div>    
+                
             </core-toolbar>
-            <!-- <weather-widget></weather-widget>-->
             <div class="content">
                 <core-header-panel mode="seamed">
                     <core-toolbar>
                         <div>Hello World!</div>
                     </core-toolbar>
+                    <date-time></datie-time>
                 </core-header-panel>
                 <core-header-panel mode="seamed">
                     <core-toolbar>
