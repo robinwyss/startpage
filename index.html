@@ -1,59 +1,42 @@
 <!DOCTYPE html>
-<html>
-    
-    <head>
-        <!-- 1. Load platform support before any code that touches the DOM. -->
-        <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-        <!-- 2. Load the component using an HTML Import -->
-        <link rel="import" href="elements/feed-reader.html">
-            <link rel="import" href="elements/feed-reader-latest.html">
-        <link rel="import" href="elements/weather-widget.html">
-        <link rel="import" href="elements/date-time.html">
-        <link rel="import" href="elements/noon-pacific.html">
-            <link rel="import" href="elements/link-list.html">
-        <style type="text/css">
-            body {
-                margin: 0;
-                background-color: #eeeeef;
-                font-family: 'Open Sans', Arial, sans-serif;
-            }
-            .content core-header-panel {
-                float: left;
-                width: 360px;
-                height: 400px;
-                margin: 5px;
-                background-color: white;
-                margin: 1px solid #555555;
-            }
-            core-toolbar {
-                 background-color: #7986cb;
-                 color: white;
-            }
-        </style>
-    </head>
-    
-    <body fullbleed layout vertical>
-        <core-header-panel flex>
-            <core-toolbar class="tall">
-            <div flex class="middle">
-                <date-time></datie-time>
-            </div>
-                <div class="weather middle">
-                    <weather-widget></weather-widget>
-                </div>    
-                
-            </core-toolbar>
-            <div class="content">
-                <feed-reader url="http://feeds.feedburner.com/ReflectivePerspective?format=xml"></feed-reader>
-                <feed-reader-latest url="http://feeds.feedburner.com/ReflectivePerspective?format=xml"></feed-reader-latest>
-                <noon-pacific></noon-pacific>
-                <link-list listtitle="Links">
-                    [
-                    { "name": "GMail", "url": "http://mail.google.ch"},
-                    { "name": "The Verge", "url": "http://www.theverge.com"}
-                    ]
-                </link-list>
-            </div>
-        </core-header-panel>
-    </body>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="row center">
+		<!-- search -->
+        <form method="get" action="https://duckduckgo.com/"> 
+			<input placeholder="Search Duck Duck Go" size="40" name="q">
+		</form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+      <!--   link Section   -->
+      <div class="row">
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
 </html>

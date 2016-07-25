@@ -1,0 +1,20 @@
+{
+  "links": {
+    "News": {
+      "The Guardian": "https://www.theguardian.com/",
+      "The Verge": "http://www.theverge.com/",
+      "Azure": "https://manage.windowsazure.com"
+    },
+    "Online Tools": {
+      "JSON Editor": "https://jsoneditoronline.org ",
+      "Pixlr": "https://pixlr.com/editor/",
+      "Gistbox": "https://app.gistboxapp.com"
+    },
+    "Google": {
+      "Gmail": "https://mail.google.com/mail/u/0/",
+      "Calendar": "https://calendar.google.com",
+      "Keep": "http://keep.google.com/",
+      "Maps": "https://www.google.com/maps"
+    }
+  }
+}

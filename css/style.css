@@ -1,0 +1,11 @@
+a.collection-item {
+    position: relative;
+}
+a.collection-item > img {
+    position: absolute;
+    top: 50%;
+    transform: translate(-0%, -50%);
+}
+a.collection-item > span {
+    padding-left: 25px;
+}
