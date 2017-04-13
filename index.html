@@ -11,11 +11,25 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+  <nav>
+		<div class="nav-wrapper">
+		<a href="#!" class="brand-logo center"><span id="Atlanta_z161"></a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#"><span id="Atlanta_z161b"></a></li>
+        <li><a href="#">Copenhagen: <span id="Copenhagen_z70" /></span></a></li>
+		<li><a href="#">Warwick: <span id="Warwick__United_Kingdom_z716"></span></a></li>
+		<li><a href="#">Chennai: <span id="Chennai_z424"></span></a></li>
+		<li><a href="http://time.is/" id="time_is_link" rel="nofollow">time.is</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <div class="row center">
 		<!-- search -->
-        <form method="get" action="https://duckduckgo.com/"> 
+        <form method="get" action="https://duckduckgo.com/">
 			<input placeholder="Search Duck Duck Go" size="40" name="q">
 		</form>
       </div>
@@ -27,7 +41,7 @@
     <div class="section">
       <!--   link Section   -->
       <div class="row">
-        
+
       </div>
     </div>
   </div>
@@ -35,8 +49,28 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="http://widget.time.is/en.js"></script
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>
+         time_is_widget.init({
+           Atlanta_z161 : {
+             template: "TIME --  DATE",
+             time_format: "hours:minutesAMPM",
+             date_format:"dname monthname dnum, year (week)"
+           },
+           Copenhagen_z70 : {
+             template: "TIME"
+           },
+           Chennai_z424 : {
+             template: "TIME"
+           },
+           Warwick__United_Kingdom_z716: {
+             template: "TIME"
+           },
+           });
+  </script>
+
 
   </body>
 </html>
