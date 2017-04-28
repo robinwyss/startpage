@@ -54,8 +54,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone.min.js"></script
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
-
+  <script>
+         time_is_widget.init({
+           Atlanta_z161 : {
+             template: "TIME --  DATE",
+             time_format: "hours:minutesAMPM",
+             date_format:"dname monthname dnum, year (week)"
+           },
+           Copenhagen_z70 : {
+             template: "TIME"
+           },
+           Chennai_z424 : {
+             template: "TIME"
+           },
+           Warwick__United_Kingdom_z716: {
+             template: "TIME"
+           },
+           });
+  </script>
 
   </body>
 </html>
